@@ -1,5 +1,14 @@
 # Алгоритмы и структуры данных (ADS-6)
 
+![GitHub pull requests](https://img.shields.io/github/issues-pr/NNTU-CS/ADS-6)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/NNTU-CS/ADS-6)
+
+Сроки выполнения задания:
+
+- **ИСТ-1,2,3,4** - **до 31 мая** 
+
+![Relative date](https://img.shields.io/date/1622408400)
+
 ## Задание
 
 > Разработать версию бинарного дерева поиска для частотного анализа слов из текстового файла. Прочитать и проанализировать англоязычную версию романа Л.Толстого "Война и мир".
