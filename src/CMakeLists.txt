@@ -1,5 +1,5 @@
 set(header_path "${${PROJECT_NAME}_SOURCE_DIR}/include")
-set(header ${header_path}/tpqueue.h)
+set(header ${header_path}/bst.h)
 set(src alg.cpp)
 
 add_library(${PROJECT_NAME} SHARED
