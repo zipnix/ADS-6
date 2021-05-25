@@ -10,30 +10,31 @@ class BST {
     Node * left;
     Node * right;
   };
-  
+
  private:
-  Node* root;
-  Node* addNode (Node *root, T value) {
+  Node * root;
+  Node * addNode(Node *root, T value) {
     if (root == nullptr) {
       root = new Node;
-      root−>value = value;
-      root−>count = 1;
-      root−>left = root−>right = nullptr;
-    } else if (root−>value > value) {
-      root->left = addNode(root−>left, value);
-    } else if (root−>value < value) {
-      root−>right = addNode(root−>right, value);
-    } else
-      root−>count++;
+      root->value = value;
+      root->count = 1;
+      root->left = root->right = nullptr;
+    } else if (root->value > value) {
+      root->left = addNode(root->left, value);
+    } else if (root->value < value) {
+      root->right = addNode(root->right, value);
+    } else {
+      root->count++;
+    }
     return root;
   }
   int searchNode(Node *root, T value) {
     if (root == nullptr)
       return 0;
-    else if (root−>value > value)
+    else if (root->value > value)
       return searchNode(root->left, value);
-    else if (root−>value < value)
-      return search(root−>right, value);
+    else if (root->value < value)
+      return searchNode(root->right, value);
     else
       return root->count;
   }
@@ -42,8 +43,8 @@ class BST {
       return 0;
     if (root->left == nullptr && root->right == nullptr)
       return 0;
-    int lh = depthTree(root−>left);
-    int rh = depthTree(root−>right);
+    int lh = getheight(root->left);
+    int rh = getheight(root->right);
     return (lh > rh ? lh : rh) + 1;
   }
  
