@@ -1,3 +1,4 @@
+// Copyright 2021 NNTU-CS
 #ifndef INCLUDE_BST_H_
 #define INCLUDE_BST_H_
 
@@ -47,7 +48,7 @@ class BST {
     int rh = getheight(root->right);
     return (lh > rh ? lh : rh) + 1;
   }
- 
+
  public:
   BST() : root(nullptr) {}
   ~BST() {}
