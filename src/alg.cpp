@@ -6,7 +6,7 @@
 #include  "bst.h"
 
 BST<std::string> makeTree(const char* filename) {
-  BST<std::string> tree;
+  BST<std::string> Tree;
   std::string res_word;
   char register_difference = 'a' - 'A';
   char symbol;
@@ -23,7 +23,7 @@ BST<std::string> makeTree(const char* filename) {
       res_word += symbol;
     } else if (res_word != "") {
       Tree.add(res_word);
-      word = "";
+      res_word = "";
     }
   }
   file.close();
