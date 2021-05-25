@@ -6,19 +6,19 @@ template <typename T>
 class BST {
  public:
   struct Node {
-    T value;
-    int count;
-    Node* left;
-    Node* right;
+   T value;
+   int count;
+   Node* left;
+   Node* right;
   };
- 
+
  private:
- Node* root;
- Node* addNode(Node *root, T value) {
-  if (root == nullptr) {
-   root = new Node;
-   root->value = value;
-   root->count = 1;
+  Node* root;
+  Node* addNode(Node* root, T value) {
+   if (root == nullptr) {
+    root = new Node;
+    root->value = value;
+    root->count = 1;
    root->left = root−>right = nullptr;
   } else if (root−>value > value) {
    root->left = addNode(root−>left, value);
@@ -28,7 +28,7 @@ class BST {
    root->count++;
   }
   return root;
-}
+ }
  int searchNode(Node *root, T value) {
   if (root == nullptr)
    return 0;
@@ -48,18 +48,18 @@ class BST {
   int rh = depthTree(root->right);
   return (lh > rh ? lh : rh) + 1;
  }
- 
+
  public:
- BST() : root(nullptr) {}
- ~BST() {}
- void add(T value) {
-  root = addNode(root, value);
- }
- int depth() {
-  return getheight(root);
- }
- int search(T value) {
-  return searchNode(root, value);
- }
+  BST() : root(nullptr) {}
+  ~BST() {}
+  void add(T value) {
+   root = addNode(root, value);
+  }
+  int depth() {
+   return getheight(root);
+  }
+  int search(T value) {
+   return searchNode(root, value);
+  }
 };
 #endif  // INCLUDE_BST_H_
