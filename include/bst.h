@@ -29,7 +29,7 @@ class BST {
     }
     return root;
   }
-  int searchNode(Node *root, T value) {
+  int searchNode(Node* root, T value) {
     if (root == nullptr)
       return 0;
     else if (root->value > value)
@@ -39,13 +39,13 @@ class BST {
     else
       return root->count;
   }
-  int getheight(Node *root) {
+  int depthTree(Node *root) {
     if (root == nullptr)
       return 0;
     if (root->left == nullptr && root->right == nullptr)
       return 0;
-    int lh = getheight(root->left);
-    int rh = getheight(root->right);
+    int lh = depthTree(root->left);
+    int rh = depthTree(root->right);
     return (lh > rh ? lh : rh) + 1;
   }
 
@@ -56,7 +56,7 @@ class BST {
     root = addNode(root, value);
   }
   int depth() {
-    return getheight(root);
+    return depthTree(root);
   }
   int search(T value) {
     return searchNode(root, value);
