@@ -6,7 +6,7 @@
 #include  "bst.h"
 
 BST<std::string> makeTree(const char* filename) {
-  BST<std::string> Tree;
+  BST<std::string>Tree;
   std::string res_word = "";
   char symbol;
   std::ifstream file(filename);
@@ -15,6 +15,7 @@ BST<std::string> makeTree(const char* filename) {
     return Tree;
   }
   while (!file.eof()) {
+    symbol = file.get();
     if ((symbol >= 'A' && symbol <= 'Z') || (symbol >= 'a' && symbol <= 'z')) {
       if (symbol >= 'A' && symbol <= 'Z') {
         symbol += 32;
