@@ -7,8 +7,7 @@
 
 BST<std::string> makeTree(const char* filename) {
   BST<std::string> Tree;
-  std::string res_word;
-  char register_difference = 'a' - 'A';
+  std::string res_word = "";
   char symbol;
   std::ifstream file(filename);
   if (!file) {
@@ -18,7 +17,7 @@ BST<std::string> makeTree(const char* filename) {
   while (!file.eof()) {
     if ((symbol >= 'A' && symbol <= 'Z') || (symbol >= 'a' && symbol <= 'z')) {
       if (symbol >= 'A' && symbol <= 'Z') {
-        symbol += register_difference;
+        symbol += 32;
       }
       res_word += symbol;
     } else if (res_word != "") {
